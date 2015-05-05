@@ -1,0 +1,10 @@
+<colors>
+	<color name="maintext">FFcccccc</color>
+	<color name="disabled">FF606060</color>
+	<color name="black">FF000000</color>
+	<color name="invalid">FFff6666</color>
+	<color name="highlight">FF0288d1</color>	
+	<color name="shadow">AA000000</color>
+	<color name="background">FF444444</color>
+	<color name="dialog">FFcccccc</color>
+</colors>
