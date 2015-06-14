@@ -18,7 +18,7 @@
 			<animation effect="slide" start="0,-90" end="0,0" delay="800" time="480">WindowOpen</animation>
 			<animation effect="slide" end="0,-90" start="0,0" time="480">WindowClose</animation>
 			<control type="image">
-				<width>1920</width>
+				<width>FullScreenWidth</width>
 				<height>45</height>
 				<texture>topbar.png</texture>
 				<colordiffuse>$VAR[ColorBackgroundVar]</colordiffuse>
@@ -49,7 +49,7 @@
 			</control>
 			<control type="label">
 				<top>-2</top>
-				<width>1920</width>
+				<width>FullScreenWidth</width>
 				<height>45</height>
 				<font>topbar</font>
 				<textoffsetx>15</textoffsetx>
@@ -377,7 +377,6 @@
 							<onup>111</onup>
 							<ondown>111</ondown>
 							<orientation>vertical</orientation>
-							<focusposition>0</focusposition>
 							<viewtype label="535">list</viewtype>
 							<preloaditems>2</preloaditems>
 							<itemlayout width="219" height="329">
@@ -477,7 +476,6 @@
 							<onup>121</onup>
 							<ondown>121</ondown>
 							<orientation>vertical</orientation>
-							<focusposition>0</focusposition>
 							<viewtype label="535">list</viewtype>
 							<preloaditems>2</preloaditems>
 							<itemlayout width="219" height="329">
@@ -742,7 +740,6 @@
 							<onup>211</onup>
 							<ondown>211</ondown>
 							<orientation>vertical</orientation>
-							<focusposition>0</focusposition>
 							<viewtype label="535">list</viewtype>
 							<preloaditems>2</preloaditems>
 							<itemlayout width="219" height="329">

@@ -42,7 +42,7 @@
                             <width>240</width>
                             <height>360</height>
                             <aspectratio>scale</aspectratio>
-                            <texture background="true" fallback="DefaultMovieTitle.png">$INFO[ListItem.Art(poster)]</texture>
+                            <texture background="true" fallback="blank.png">$INFO[ListItem.Art(poster)]</texture>
                             <fadetime>300</fadetime>
                         </control>
 						<control type="image">
@@ -72,7 +72,7 @@
 							<width>240</width>
 							<height>360</height>
 							<aspectratio>scale</aspectratio>
-                            <texture background="true" fallback="DefaultMovieTitle.png">$INFO[ListItem.Art(poster)]</texture>
+                            <texture background="true" fallback="blank.png">$INFO[ListItem.Art(poster)]</texture>
                             <fadetime>300</fadetime>
 							<bordertexture colordiffuse="$VAR[ColorHighlightVar]" border="9">thumbs/thumbnail_focused.png</bordertexture>
 							<bordersize>8</bordersize>
@@ -150,7 +150,7 @@
 			<control type="image">
 				<left>0</left>
 				<top>0</top>
-				<width>1920</width>
+				<width>FullScreenWidth</width>
 				<height>45</height>
 				<texture>topbar.png</texture>
 				<colordiffuse>$VAR[ColorBackgroundVar]</colordiffuse>
@@ -181,7 +181,7 @@
                 </control>
 				<control type="label">
 					<left>0</left>
-					<width>1920</width>
+					<width>FullScreenWidth</width>
 					<height>45</height>
 					<font>topbar</font>
 					<textoffsetx>15</textoffsetx>
@@ -243,6 +243,8 @@
                 <colordiffuse>$VAR[ColorHighlightVar]</colordiffuse>
             </control>
             <control type="grouplist" id="9000">
+                <animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
+                <visible>IsEmpty(Window(home).Property(t9search))</visible>
                 <left>0</left>
                 <top>120</top>
                 <width>400</width>

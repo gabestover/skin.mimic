@@ -7,15 +7,13 @@
 	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=x1|x2|x3|x4|x5|x6|x7|x8|x9|x10|x11|x12|x13|x101|x202|x303|x404|x505|x606)</onunload>
 	<controls>
 		<include>CommonBackground</include>
-		<include>Topbar</include>
-		<include>Bottombar</include>
 		<control type="group">
 			<left>0</left>
 			<top>128</top>
 			<include>Window_OpenClose_Animation</include>
 			<control type="list" id="9000">
 				<left>82</left>
-				<top>32</top>
+				<top>0</top>
 				<width>356</width>
 				<height>840</height>
 				<onleft>SetProperty(MediaMenu,True,home)</onleft>
@@ -114,10 +112,20 @@
 					</item>-->
 				</content>
 			</control>
+			<!--<control type="image">
+				<description>LOGO</description>
+				<left>82</left>
+				<top>752</top>
+				<width>356</width>
+				<height>120</height>
+				<aspectratio>keep</aspectratio>
+				<texture>mimic-logo.png</texture>
+				<colordiffuse>$VAR[ColorHighlightVar]</colordiffuse>
+			</control>-->
 			<control type="textbox">
 				<description>description area</description>
 				<left>552</left>
-				<top>754</top>
+				<top>742</top>
 				<width>1256</width>
 				<height>140</height>
 				<font>font15_textbox</font>
@@ -135,7 +143,7 @@
 				<control type="grouplist" id="9001">
 					<description>Home window control area</description>
 					<left>522</left>
-					<top>32</top>
+					<top>0</top>
 					<width>1316</width>
 					<height>720</height>
 					<itemgap>0</itemgap>
@@ -230,7 +238,7 @@
 				<control type="grouplist" id="9002">
 					<description>General control area</description>
 					<left>522</left>
-					<top>32</top>
+					<top>0</top>
 					<width>1316</width>
 					<height>720</height>
 					<itemgap>0</itemgap>
@@ -297,7 +305,7 @@
 				<control type="grouplist" id="9003">
 					<description>Extras control area</description>
 					<left>522</left>
-					<top>32</top>
+					<top>0</top>
 					<width>1316</width>
 					<height>720</height>
 					<itemgap>0</itemgap>
@@ -348,6 +356,15 @@
 						<onclick>Skin.ToggleSetting(Disable.NextAired)</onclick>
 						<selected>!Skin.HasSetting(Disable.NextAired)</selected>
 					</control>
+					<control type="radiobutton" id="312">
+						<width>1316</width>
+						<height>90</height>
+						<textoffsetx>30</textoffsetx>
+						<font>font15</font>
+						<label>31135</label>
+						<onclick>Skin.ToggleSetting(Disable.AutoComplete)</onclick>
+						<selected>!Skin.HasSetting(Disable.AutoComplete)</selected>
+					</control>
 					<control type="button" id="310">
 						<width>1316</width>
 						<height>90</height>
@@ -370,7 +387,7 @@
 				<control type="grouplist" id="9005">
 					<description>Colors control area</description>
 					<left>522</left>
-					<top>32</top>
+					<top>0</top>
 					<width>1316</width>
 					<height>720</height>
 					<itemgap>0</itemgap>
@@ -433,7 +450,7 @@
 				<control type="grouplist" id="90050">
 					<description>control area</description>
 					<left>1761</left>
-					<top>135</top>
+					<top>103</top>
 					<width>64</width>
 					<height>720</height>
 					<itemgap>26</itemgap>
@@ -463,7 +480,7 @@
 				<control type="grouplist" id="9004">
 					<description>Advanced control area</description>
 					<left>522</left>
-					<top>32</top>
+					<top>0</top>
 					<width>1316</width>
 					<height>720</height>
 					<itemgap>0</itemgap>
@@ -517,17 +534,37 @@
 						<label2>$VAR[FavViewSettingVar]</label2>
 						<onclick>Skin.ToggleSetting(Enable.FavView)</onclick>
 					</control>
+					<control type="button" id="408">
+						<width>1316</width>
+						<height>90</height>
+						<textoffsetx>30</textoffsetx>
+						<font>font15</font>
+						<label>31043</label>
+						<onclick>RunScript(script.toolbox,info=exportskinsettings)</onclick>
+						<enable>System.HasAddon(script.toolbox)</enable>
+					</control>
+					<control type="button" id="409">
+						<width>1316</width>
+						<height>90</height>
+						<textoffsetx>30</textoffsetx>
+						<font>font15</font>
+						<label>31128</label>
+						<onclick>RunScript(script.toolbox,info=importskinsettings)</onclick>
+						<enable>System.HasAddon(script.toolbox)</enable>
+					</control>
 					<control type="button" id="407">
 						<width>1316</width>
 						<height>90</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
 						<label>31109</label>
-						<onclick>RunScript(special://skin/extras/yesno.py)</onclick>
+						<onclick>RunScript(script.toolbox,info=yesnodialog,header=$LOCALIZE[31024],text='"$LOCALIZE[31040]"',yesaction=Skin.ResetSettings||Skin.SetBool(Enable.HomeDefault))</onclick>
+						<enable>System.HasAddon(script.toolbox)</enable>
 					</control>
 				</control>
 			</control>
 			<control type="scrollbar" id="60">
+				<visible>!Window.IsActive(1121)</visible>
 				<left>1906</left>
 				<top>-83</top>
 				<width>14</width>
@@ -538,6 +575,8 @@
 				<onup>60</onup>
 			</control>
 		</control>
+		<include>Topbar</include>
+		<include>Bottombar</include>
 		<include>SettingsMediaMenu</include>
 	</controls>
 </window>

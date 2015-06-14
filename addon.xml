@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
   id="skin.mimic"
-  version="2.1.1"
+  version="2.1.2"
   name="Mimic"
   provider-name="bryanbrazil">
 	<requires>
@@ -9,6 +9,7 @@
 		<import addon="script.grab.fanart" version="0.13.2"/>
 		<import addon="script.skinshortcuts" version="0.4.5"/>
 		<import addon="service.library.data.provider" version="0.0.7"/>
+		<import addon="script.toolbox" version="1.0.1"/>
 	</requires>
 	<extension
 	  point="xbmc.gui.skin"
